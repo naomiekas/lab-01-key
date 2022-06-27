@@ -98,7 +98,7 @@ This command must be ran in the Console.
 
 ### Exercise 1 Answer
 
-Remove this text, and add your answer for Exercise 1 here.
+Answer: 13 rows 2 columns 
 
 Let's take a look at what these datasets are.
 To do so we can make a *frequency table* of the dataset variable:
@@ -175,27 +175,63 @@ dino_data %>%
 
 ### Exercise 2 Answer
 
-Remove this text, and add your answer for Exercise 2 here.
+-.0645
 
 🧶 ✅ ⬆️ *Knit, commit, and push your changes to GitHub with the commit message "Added answer for Ex 2". Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 3.  Plot `y` vs. `x` for the `star` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
 
+```{r}
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
+
+```
+
+```{r fig.fullwidth=TRUE}
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+
+```
+
+```{r}
+star_data %>%
+  summarize(r = cor(x, y))
+
+```
+
 
 
 ### Exercise 3 Answer
 
-Remove this text, and add your answer for Exercise 3 here.
+-.0630. It is very similar to dino.
 
 🧶 ✅ ⬆️ *This is another good place to pause, knit, commit changes with the commit message "Added answer for Ex 3", and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
 4.  Plot `y` vs. `x` for the `circle` dataset. You can (and should) reuse code we introduced above, just replace the dataset name with the desired dataset. Then, calculate the correlation coefficient between `x` and `y` for this dataset. How does this value compare to the `r` of `dino`?
 
+```{r}
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+
+```
+
+```{r fig.fullwidth=TRUE}
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+
+```
+
+```{r}
+circle_data %>%
+  summarize(r = cor(x, y))
+
+```
+
 
 
 ### Exercise 4 Answer
 
-Remove this text, and add your answer for Exercise 4 here.
+-.0683. Pretty similar to dino. 
 
 🧶 ✅ ⬆️ *You should pause again, commit changes with the commit message "Added answer for Ex 4", and push. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards.*
 
